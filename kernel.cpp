@@ -14,6 +14,6 @@ public:
 };
 
 extern "C" void main() {
-	Test test('k');
+	Test test('A');
 	test.doIt();
 }
