@@ -1,5 +1,5 @@
 CPP = clang --target=i686-elf
-CPPFLAGS = -c -O3 -Wall -ffreestanding
+CPPFLAGS = -c -O3 -ffreestanding -fno-rtti -fno-exceptions -Wall -Wextra
 ASM = nasm -felf32
 ASMFLAGS = -Wall
 LD = $(CPP)

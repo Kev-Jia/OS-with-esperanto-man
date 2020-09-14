@@ -1,19 +1,10 @@
-class Test {
-private:
-	char m_ch;
-public:
-	Test(char ch) {
-		m_ch = ch;
-	}
+#include "config.hpp"
 
-	void doIt() {
-		char *vga = (char *)0xb8000;
-		vga[0] = m_ch;
-		vga[1] = 0x1f;
-	}
-};
+#include DISPLAY_DRIVER
 
+// Because C++ compilers change object names (this called 'name mangling' and is required for C++'s function overloading), to be able to find our main() function in our bootstrap.asm code, we must employ 'extern "C"'--which disables name mangling.
 extern "C" void main() {
-	Test test('A');
-	test.doIt();
+	TextBuffer kernelTextBuffer("Kernel");
+	kernelTextBuffer.printString("Hello, kernel!\n\nThis is a test of newlines.");
+	kernelTextBuffer.display();
 }
