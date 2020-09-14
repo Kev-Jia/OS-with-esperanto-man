@@ -3,9 +3,9 @@
 
 # Compilation instructions
 ## Dependencies
-`clang` (or i686-elf cross-compiler--requires changes to the Makefile)
-`nasm`
-`qemu` (not required, but run by default in the Makefile)
+`clang` (or i686-elf cross-compiler--requires changes to the Makefile)  
+`nasm`  
+`qemu` (not required, but run by default in the Makefile)  
 
 ## Compilation
 Download the files and run make.
