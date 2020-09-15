@@ -1,9 +1,15 @@
 #include "string.hpp"
 
-String::String() {}
+String::String() {
+    
+}
 
 String::String(const char *string) {
-    m_string = string;
+    m_string = (char *)string;
+}
+
+void String::operator=(const char *string) {
+  m_string = string;
 }
 
 char String::operator[](size_t i)

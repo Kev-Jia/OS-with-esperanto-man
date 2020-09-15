@@ -29,6 +29,7 @@ private:
     // Displayed on the top line of the screen when active.
     String m_name;
     // The VGA buffer needs two bytes for one character: one character byte and one colour byte. Because the colour does not change, m_buffer does not include colour data.
+    // We use char[] here because String is immutable
     char m_buffer[VGA_HEIGHT * VGA_WIDTH];
     char *m_vga_memory = (char *)VGA_MEMORY;
     // Current X and Y coordinates of cursor.
